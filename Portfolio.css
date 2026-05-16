@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --bg-color: #0b1120; /* Deep premium dark blue */
+    --neon-green: #00ff9d; /* Accents */
+    --text-main: #ffffff;
+    --text-muted: #94a3b8;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* --- Glassmorphism Utilities --- */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 30px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--neon-green);
+    box-shadow: 0 10px 30px rgba(0, 255, 157, 0.15);
+}
+
+/* --- Navbar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(11, 17, 32, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo { font-size: 1.5rem; font-weight: 700; }
+.logo span { color: var(--neon-green); }
+
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links a { 
+    color: var(--text-main); 
+    text-decoration: none; 
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+.nav-links a:hover { color: var(--neon-green); }
+
+/* --- Hero Section & Photo --- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 150px 8% 100px;
+    min-height: 100vh;
+}
+
+.hero-content { max-width: 600px; }
+.hero-content h3 { font-size: 1.5rem; color: var(--text-muted); }
+.hero-content h1 { font-size: 3.5rem; margin: 10px 0; }
+.hero-content h2 span { color: var(--neon-green); }
+.hero-content p { color: var(--text-muted); margin-bottom: 30px; line-height: 1.6; }
+
+/* Photo Styling - The Professional Circle */
+.hero-image {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    padding: 10px;
+    background: linear-gradient(45deg, var(--neon-green), transparent);
+    animation: glow 3s infinite alternate;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--bg-color); /* Creates a neat gap */
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 20px rgba(0, 255, 157, 0.2); }
+    100% { box-shadow: 0 0 50px rgba(0, 255, 157, 0.6); }
+}
+
+/* --- Buttons & Links --- */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: transparent;
+    color: var(--neon-green);
+    border: 2px solid var(--neon-green);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--neon-green);
+    color: var(--bg-color);
+    box-shadow: 0 0 20px var(--neon-green);
+}
+
+.social-links a {
+    color: var(--text-main);
+    font-size: 1.5rem;
+    margin-right: 20px;
+    transition: 0.3s;
+}
+.social-links a:hover { color: var(--neon-green); transform: translateY(-3px); }
+
+/* --- Sections & Projects --- */
+.section { padding: 80px 8%; }
+.section-title { font-size: 2.5rem; margin-bottom: 40px; text-align: center; }
+.section-title span { color: var(--neon-green); }
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--neon-green); }
+.project-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; }
+
+.tags span {
+    background: rgba(0, 255, 157, 0.1);
+    color: var(--neon-green);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid var(--glass-border);
+    margin-top: 50px;
+}
+footer p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;}
+/* Discipline Stats */
+.discipline-container {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    gap: 20px;
+}
+.stat-box i {
+    font-size: 2.5rem;
+    color: var(--neon-green);
+    margin-bottom: 15px;
+}
+
+/* Project Architecture / Case Study */
+.case-study {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+.case-box h4 {
+    color: var(--neon-green);
+    margin-bottom: 10px;
+}
+
+/* Beyond Code / Impact */
+.impact-card {
+    text-align: center;
+    border-left: 5px solid var(--neon-green);
+}
+.impact-content i {
+    font-size: 3rem;
+    color: var(--neon-green);
+    margin-bottom: 15px;
+}
+
+/* Trajectory & CTA */
+.trajectory-card {
+    text-align: center;
+}
+.cta-group {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.secondary-btn {
+    border-color: var(--text-muted);
+    color: var(--text-muted);
+}
+.secondary-btn:hover {
+    border-color: var(--text-main);
+    color: var(--text-main);
+}
+/* --- Skills Section --- */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.skill-category {
+    text-align: center;
+}
+
+.skill-category h3 {
+    color: var(--text-main);
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.skill-category h3 i {
+    color: var(--neon-green);
+    font-size: 1.5rem;
+}
+
+.skill-category .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.skill-category .skill-tags span {
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    color: var(--text-muted);
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.skill-category .skill-tags span:hover {
+    background: rgba(0, 255, 157, 0.1);
+    border-color: var(--neon-green);
+    color: var(--neon-green);
+    box-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
+    transform: translateY(-3px);
+}
