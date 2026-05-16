@@ -272,3 +272,72 @@ footer p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;}
     box-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
     transform: translateY(-3px);
 }
+/* =========================================
+   MOBILE RESPONSIVENESS (Screens under 768px)
+   ========================================= */
+
+@media (max-width: 768px) {
+    
+    /* 1. Navbar Adjustments - Center align the menu */
+    .navbar {
+        flex-direction: column;
+        padding: 15px 5%;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* 2. Hero Section - Photo upar, Text niche */
+    .hero {
+        flex-direction: column-reverse; /* Isse photo upar aa jayegi */
+        text-align: center;
+        padding: 140px 5% 50px;
+        gap: 30px;
+    }
+
+    /* 3. Photo Size - Mobile ke hisaab se thoda chota */
+    .hero-image {
+        width: 240px;
+        height: 240px;
+        margin: 0 auto; /* Center alignment ke liye */
+    }
+
+    /* 4. Text Adjustments */
+    .hero-content h1 {
+        font-size: 2.2rem; /* Font size mobile ke liye optimal kiya */
+    }
+    
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+
+    /* Social icons ko center mein laane ke liye */
+    .social-links {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    /* 5. General Sections Padding */
+    .section {
+        padding: 60px 5%;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+
+    /* Discipline & Skills sections ko stack karne ke liye */
+    .discipline-container {
+        flex-direction: column;
+    }
+    
+    .cta-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
